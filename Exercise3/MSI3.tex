@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+\usepackage{tabularx}
+\usepackage[a4paper, total={6in, 10in}]{geometry}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{tabstackengine,amsmath}
+\usepackage{graphicx}
+\graphicspath{ {./} }
+
+\author{} % Add full names and check
+
+% ---------- Modify team name, students, exercise number here ----------
+\newcommand{\students}{Abhijeet Nayak(5253170) and Rean Fernandes(5250057)}
+\newcommand{\assignmentnumber}{3}
+% ---------- End Modify ----------
+
+\title{MSI exercise \assignmentnumber}
+\author{Students: \students}
+%\date{\today}
+
+\begin{document}
+\maketitle	
+\section{Task 1}
+\begin{enumerate}
+\item
+\begin{equation}
+\nabla f(x) = 2Qx + c, \nabla ^ 2 f(x) = 2Q 
+\end{equation}
+\item
+Q should be invertible and Positive Semi-Definite
+\item
+\begin{equation}
+\begin{split}
+2Qx^* + c = 0 \\
+x^* = -\frac{1}{2} Q^{-1}C
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+f(x^*) &= \frac{1}{4}c^TQ^{-1}QQ^{-1}c - \frac{1}{2}c^TQ^{-1}c \\
+f(x^*) &= - \frac{1}{4}c^TQ^{-1}c
+\end{split}
+\end{equation} 
+\end{enumerate}
+
+\section{Task 2}
+\begin{equation} 
+\begin{split}
+\nabla f(x) &= 2 \begin{bmatrix}
+4 & 1 \\
+1 & 2
+\end{bmatrix} \ x + \begin{bmatrix}
+3 \\
+4
+\end{bmatrix} = 0
+\end{split} 
+\end{equation}
+\begin{equation}
+x = -\frac{1}{2} \begin{bmatrix}
+4 & 1 \\
+1 & 2
+\end{bmatrix}^{-1} \begin{bmatrix}
+3 \\
+4
+\end{bmatrix} = \begin{bmatrix}
+-0.1429 \\
+-0.9286
+\end{bmatrix}
+\end{equation}
+There exists a single value for x that satisfies the First order Necessary Condition. This is the Global Minimizer as well because the objective function is convex.
+\section{Task 3}
+\begin{equation}
+\begin{split}
+E[S^2] &= E \left[ \frac{1}{N - 1} \sum_{n = 1}^{N} {(Y(n) - M(Y_N))^2} \right] \\
+&= \frac{1}{N - 1} \sum_{n = 1}^{N} E \left[ Y(n)^2 - 2 * Y(n) * M(Y_N) + M(Y_N)^2 \right] \\
+&= \frac{N}{N - 1} \left( E[Y(n)^2] - 2E[Y(n) * M(Y_N)] + E[M(Y_N)^2] \right) \\
+&= \frac{N}{N - 1} \left( E[Y(n)^2] - 2E \left[ Y(n) * \frac{(Y(1) + ... + Y(n) + ... + Y(N))}{N} \right] + E[M(Y_N)^2] \right) \\
+&= \frac{N}{N - 1} \left( \sigma_Y^2 + \mu_y^2 - 2\left( \frac{\sigma_Y^2}{N} + \mu_y^2 \right) + \frac{\sigma_Y^2}{N} + \mu_y^2 \right) \\
+&= \frac{N}{N - 1} \left( \sigma_Y^2 - \frac{\sigma_Y^2}{N} \right) \ = \ \sigma_Y^2 \\
+\end{split}
+\end{equation}
+If we use the factor (N - 1) for the variance, we end up with an unbiased estimator, as shown.
+
+\section{Task 4}
+\begin{itemize}
+\item{\makebox[2cm]{\textbf{Part b}}
+\begin{equation}
+\Phi = \begin{bmatrix}
+1 & i(1) \\
+1 & i(2) \\
+. & . \\
+. & . \\
+1 & i(N)
+\end{bmatrix},
+y = \begin{bmatrix}
+u(1) \\
+u(2) \\
+. \\
+. \\
+u(N)
+\end{bmatrix},
+\theta = \begin{bmatrix}
+E \\
+R
+\end{bmatrix}
+\end{equation} 
+
+\begin{equation}
+m = \Phi \theta
+\end{equation} }
+
+\item{\makebox[2cm]{\textbf{Part e}} The second dataset is noisier.
+The first dataset assumes Gaussian Noise. The second dataset assumes Uniform Noise.}
+\end{itemize}
+
+\end{document}
