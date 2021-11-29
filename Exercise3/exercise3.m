@@ -28,6 +28,8 @@ ylabel("V");
 Phi1 = [ones(size(i1, 1), 1) i1];
 Phi2 = [ones(size(i2, 1), 1) i2];
 
+disp(size(Phi1));
+
 theta1 = inv(Phi1' * Phi1) * Phi1' * u1;
 theta2 = inv(Phi2' * Phi2) * Phi2' * u2;
 
